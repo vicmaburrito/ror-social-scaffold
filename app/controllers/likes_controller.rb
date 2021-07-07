@@ -8,7 +8,7 @@ class LikesController < ApplicationController
       redirect_to posts_path, alert: 'You cannot like this post.'
     end
   end
-
+   
   def destroy
     like = Like.find_by(id: params[:id], user: current_user, post_id: params[:post_id])
     if like
