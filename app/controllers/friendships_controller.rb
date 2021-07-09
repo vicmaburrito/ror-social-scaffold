@@ -7,5 +7,6 @@ class FriendshipsController < ApplicationController
             redirect_to request.referrer
         else
             redirect_to request.referrer, alert: @Friendship.errors.full_messages.join('. ').to_s
+        end
     end
 end
