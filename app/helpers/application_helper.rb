@@ -18,6 +18,7 @@ module ApplicationHelper
 
   def confirm_decline(request)
     return unless request.user.confirm_inverse?(current_user)
+
     render partial: 'friendships/confirm_decline', locals: { request: request }
   end
 end
