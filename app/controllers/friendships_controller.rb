@@ -23,4 +23,13 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships
     @inverse_friendships = current_user.inverse_friendships
   end
+  def destroy
+    @friendship = Friendship.find(friend_id: current_user.id, user_id: params[:user_id])
+    if @friendship.destroy
+        @friendship.confirm_friend
+        redirect_to request.referrer, notice: 'Friend request declined'
+      else
+        redirect_to request.referrer, alert: @friendship.errors.full_messages.join('. ').to_s
+      end
+  end
 end
