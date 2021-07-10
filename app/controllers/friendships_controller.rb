@@ -19,4 +19,8 @@ class FriendshipsController < ApplicationController
         redirect_to request.referrer, alert: @friendship.errors.full_messages.join('. ').to_s
       end
   end
+  def index
+    @friendship = current_user.friendships
+    @inverse_friendships = current_user.inverse_friendships
+  end
 end
