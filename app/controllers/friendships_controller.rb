@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
       flash[:notice] = 'Friend request was successfully sent.'
       redirect_to request.referrer
     else
-      redirect_to request.referrer, alert: @Friendship.errors.full_messages.join('. ').to_s
+      redirect_to request.referrer, alert: @friendship.errors.full_messages.join('. ').to_s
     end
   end
 end
