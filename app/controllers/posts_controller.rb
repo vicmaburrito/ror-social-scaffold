@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    user = [current_user.id]
+    users = [current_user.id]
     unless Friendship.find_by(user_id: current_user.id, confirmed: true).nil?
       users.push(Friendship.find_by(user_id: current_user.id, confirmed: true).friend_id)
     end
