@@ -1,3 +1,4 @@
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -23,7 +24,7 @@ class User < ApplicationRecord
     friendships.find_by(friend_id: friend.id).nil? && created_inverse?(friend)
   end
 
-  def created_inverse
+  def created_inverse?(friend)
     friend.friendships.find_by(friend_id: id).nil?
   end
 
