@@ -6,7 +6,7 @@ RSpec.describe User, type: :feature do
   let(:user1) { User.create(name: 'Juan', email: 'user@example.com', password: 'admin123') }
 
   # User 2
-  let(:user2) { User.create(name: 'Diego', email: 'user@debian.com', password: 'admin321') }
+  let(:user2) { User.create(name: 'Pedro', email: 'admin@microsoft.com', password: 'admin123') }
   describe 'friendship' do
     before do
       visit new_user_session_path

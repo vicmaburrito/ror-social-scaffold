@@ -13,10 +13,11 @@ class FriendshipsController < ApplicationController
   def update
     @friendship = Friendship.find(params[:id])
     @friendship.confirmed = true
+
     if @friendship.save
-      redirect_to user_path(current_user.id), notice: 'Friend request was succesfull'
+      redirect_to user_path(current_user.id), notice: 'Friend request was successfully confirmed.'
     else
-      redirect_to user_path(current_user.id), alert: @friendship.errors.full_messages.join('. ').to_s
+      redirect_to user_path(current_user.id), alert: @friendship.error.full_messages.join('. ').to_s
     end
   end
 
@@ -27,6 +28,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship = Friendship.find_by(friend_id: current_user.id, user_id: params[:user_id])
+
     if @friendship.destroy
       redirect_to request.referrer, notice: 'Friend request declined'
     else
