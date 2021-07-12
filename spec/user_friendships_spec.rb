@@ -7,7 +7,7 @@ let(:user1) {User.create(name: 'Juan', email: 'user@example.com', password: 'adm
 
 # User 2
 let(:user) { User.create(name: 'Diego', email: 'user@debian.com', password: 'admin321')}
-  describe '' do 
+  describe 'friendship' do 
     before do 
       visit new_user_session_path
       fill_in 'user[email]', with user1.email
@@ -16,7 +16,7 @@ let(:user) { User.create(name: 'Diego', email: 'user@debian.com', password: 'adm
     end 
     it 'shows the right content for user index' do 
       visit users_path(user2)
-      expect(page)-to have_button('Add Friend')
+      expect(page).to have_button('Add Friend')
     end
   end 
 end
