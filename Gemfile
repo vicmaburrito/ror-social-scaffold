@@ -38,12 +38,23 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 # Add fake data
-
+gem 'rexml'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'rspec'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdrivers'
+
+  gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do

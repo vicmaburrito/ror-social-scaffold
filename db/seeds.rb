@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# user_list = [
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-#     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
-# ]
+ user_list = [
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+     [ Faker::Name.name, Faker::Internet.email, 'admin123' ],
+ ]
 
-# user_list.each do |name, email, password|
-#     User.create(name: name, email: email, password: password)
-# end
+ user_list.each do |name, email, password|
+     User.create(name: name, email: email, password: password)
+ end
