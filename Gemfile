@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Install wdm Gem if the platform is Windows
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -38,13 +38,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 # Add fake data
-gem 'rexml'
+gem 'faker', '~> 1.6', '>= 1.6.6'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker', '~> 1.6', '>= 1.6.6'
+  # The RSpec testing framework
   gem 'rspec'
-  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'rspec-rails', '~> 5.0.0'
+
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
 
@@ -60,6 +62,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rubocop'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
