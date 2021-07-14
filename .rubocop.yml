@@ -1,11 +1,13 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - "db/**/*"
-    - "bin/*"
+    - "bin/*" 
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "../private-events/spec/models/event_spec.rb"
 
   DisplayCopNames: true
 
@@ -24,7 +26,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ["describe"]
+  IgnoredMethods: ['describe']
   Max: 30
 
 Style/Documentation:
