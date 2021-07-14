@@ -17,6 +17,9 @@ Ruby: 3.0.0
 Rails: 6.1.4
 Postgres: >=9.5
 
+### Live Preview
+ https://sleepy-shelf-46660.herokuapp.com/
+
 ### Setup
 
 Install gems with:
