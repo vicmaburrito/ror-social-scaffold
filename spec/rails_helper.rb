@@ -8,6 +8,14 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'shoulda/matchers'
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+RSpec.configuration do |config|
+  # [...]
+  config.include RequestSpecHelper, type: :request
+  # [...]
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

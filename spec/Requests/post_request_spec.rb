@@ -7,7 +7,7 @@ RSpec.describe 'Post Requests', type: :request do
     before { get '/posts' }
 
     it 'returns posts' do
-      # TODO: buils `json` as custom helper to parse JSON responses
+      # TODO: build `json` as custom helper to parse JSON responses
     #   expect(json).not_to be_empty
     #   expect(json.size).to eq(size.to_num) #Set size
     end
