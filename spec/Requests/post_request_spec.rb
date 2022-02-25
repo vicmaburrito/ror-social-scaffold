@@ -43,6 +43,8 @@ RSpec.describe 'Post Requests', type: :request do
       end
     end
   end
+
+  # Test suite for POST /posts
   describe 'POST /posts' do
     let(:valid_attributes) { { content: 'Fifteen birds in five fir trees' } }
 
@@ -69,6 +71,32 @@ RSpec.describe 'Post Requests', type: :request do
         expect(response.body)
           .to match(/Validation failed: Created by can't be blank/)
       end
+    end
+  end
+
+  # Test suite for PUT /posts/:id
+  describe 'PUT /posts/:id' do
+    let(:valid_attributes) { { title: 'Where now are the Dunedain, Elessar, Elessar?' } }
+
+    context 'when the record exists' do
+      before { put "/posts/#{post_id}", params: valid_attributes }
+
+      it 'updates the record' do
+        expect(response.body).to be_empty
+      end
+
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+  end
+
+  # Test suite for DELETE /posts/:id
+  describe 'DELETE /posts/:id' do
+    before { delete "/posts/#{post_id}" }
+
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
     end
   end
 end
