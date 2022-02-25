@@ -43,4 +43,32 @@ RSpec.describe 'Post Requests', type: :request do
       end
     end
   end
+  describe 'POST /posts' do
+    let(:valid_attributes) { { content: 'Fifteen birds in five fir trees' } }
+
+    context 'when the request is valid' do
+      before { post '/posts', params: valid_attributes }
+
+      it 'creates a post' do
+        expect(json['content']).to eq('Fifteen birds in five fir trees')
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'when the request is invalid' do
+      before { post '/posts', params: { title: '"The wind was on the withered heath"' } }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body)
+          .to match(/Validation failed: Created by can't be blank/)
+      end
+    end
+  end
 end
