@@ -73,16 +73,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-end
+  config.include RequestSpecHelper, type: :request
 
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
+  config.mock_with :rspec do |mocks|
+    mocks.allow_message_expectations_on_nil = true
   end
-end
-
-RSpec.configure do |config|
   # [...]
   # add `FactoryBot` methods
   config.include FactoryBot::Syntax::Methods
@@ -99,5 +94,11 @@ RSpec.configure do |config|
       example.run
     end
   end
-  # [...]
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
