@@ -35,14 +35,18 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
 gem 'devise'
+gem 'devise-jwt'
+gem 'jwt'
+gem 'rack-cors'
 # Add fake data
-gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'database_cleaner'
+  gem 'factory_bot_rails', '~> 6.2'
   # The RSpec testing framework
   gem 'rspec'
   gem 'rspec-rails', '~> 5.0.0'
