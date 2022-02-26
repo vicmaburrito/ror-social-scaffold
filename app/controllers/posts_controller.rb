@@ -13,11 +13,11 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
-      render json: resource, status: :created
+      render json: @post, status: :created
     else
       timeline_posts
       render :index, alert: 'Post was not created.'
-      render json: resource, status: :unprocessable_entity
+      render json: @post, status: :unprocessable_entity
     end
   end
 
