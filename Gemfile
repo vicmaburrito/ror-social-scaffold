@@ -35,8 +35,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'jwt'
 gem 'devise'
+gem 'devise-jwt'
+gem 'jwt'
+gem 'rack-cors'
 # Add fake data
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
